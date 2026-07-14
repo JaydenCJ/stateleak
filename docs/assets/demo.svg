@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="13">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e2430"/>
+      <stop offset="1" stop-color="#161b24"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="760" height="470" rx="12" fill="url(#bg)"/>
+  <rect x="0" y="0" width="760" height="34" rx="12" fill="#0e121a"/>
+  <rect x="0" y="22" width="760" height="12" fill="#0e121a"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="17" r="6" fill="#28c840"/>
+  <text x="380" y="22" fill="#8b95a7" text-anchor="middle" font-size="12">stateleak hunt</text>
+  <g fill="#d6deeb" xml:space="preserve">
+    <text x="24" y="62"><tspan fill="#7fdbca">$</tspan> stateleak hunt --trials 10</text>
+    <text x="24" y="88" fill="#8b95a7">stateleak report</text>
+    <text x="24" y="108" fill="#8b95a7">================</text>
+    <text x="24" y="130">runner    : pytest (rootdir=.)</text>
+    <text x="24" y="152">suite     : 412 tests</text>
+    <text x="24" y="174">baseline  : <tspan fill="#28c840">PASS</tspan> in collected order</text>
+    <text x="24" y="196">trials    : 3 shuffle(s) from seed 1 (2 clean, 1 failing)</text>
+    <text x="24" y="230" fill="#febc2e">FINDING 1: polluter -&gt; victim (seed 3)</text>
+    <text x="24" y="252">  victim   : <tspan fill="#ff5f57">tests/test_audit.py::test_warehouse_starts_empty</tspan></text>
+    <text x="24" y="274">  polluter : <tspan fill="#82aaff">tests/test_receiving.py::test_receiving_adds_stock</tspan></text>
+    <text x="24" y="296">  minimal repro (2 tests):</text>
+    <text x="24" y="318">      1. tests/test_receiving.py::test_receiving_adds_stock</text>
+    <text x="24" y="340">      2. tests/test_audit.py::test_warehouse_starts_empty</text>
+    <text x="24" y="362">  verify   : stateleak verify --runner pytest tests/test_receiving.py::te<tspan fill="#8b95a7">…</tspan></text>
+    <text x="24" y="384">  evidence : victim passes alone but fails after the polluter set; the s<tspan fill="#8b95a7">…</tspan></text>
+    <text x="24" y="418" fill="#febc2e">order dependencies found: 1 (15 runs, 3 cached)</text>
+    <text x="24" y="448" fill="#8b95a7">exit code 1 — wire it straight into a pre-merge gate</text>
+  </g>
+</svg>

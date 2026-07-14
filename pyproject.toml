@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stateleak"
+version = "0.1.0"
+description = "Find test-order dependencies by seeded shuffling and report the minimal polluter/victim pair via delta debugging."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "JaydenCJ" }]
+keywords = [
+    "test-order",
+    "flaky-tests",
+    "delta-debugging",
+    "test-isolation",
+    "pytest",
+    "shuffle",
+    "pytest-xdist",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+stateleak = "stateleak.cli:console_main"
+
+[project.urls]
+Homepage = "https://github.com/JaydenCJ/stateleak"
+Repository = "https://github.com/JaydenCJ/stateleak"
+Issues = "https://github.com/JaydenCJ/stateleak/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
